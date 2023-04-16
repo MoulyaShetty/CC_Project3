@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Task</title>
+    <style>
+      /* Add some basic styling to improve the UI */
+      body {
+        font-family: sans-serif;
+        background: linear-gradient(90deg, #22c1c3, #ebb543); 
+      }
+      h1 {
+        text-align: center;
+        margin-top: 200px;
+        margin-bottom: -125px;
+        line-height: 1pt;
+      }
+      form {
+        max-width: 500px;
+        margin-top: 150px;
+        margin-left: 365px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+      }
+      input[type="text"], input[type="date"], button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: none;
+        font-size: 16px;
+      }
+      input[type="text"], input[type="date"] {
+        background-color: #f2f2f2;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Edit Task</h1>
+    <form method="post" action="/edit/{{ task[0] }}">
+      <label for="name">Task Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter task name" value="{{ task[1] }}" required>
+      <label for="due-date">Due Date:</label>
+      <input type="date" id="due-date" name="due_date" value="{{ task[2] }}" required>
+      <button type="submit">Save Changes</button>
+    </form>
+  </body>
+</html>
