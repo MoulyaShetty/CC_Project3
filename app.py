@@ -2,9 +2,9 @@ from flask import Flask, render_template, request, redirect
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
-app.config['MYSQL_HOST'] = '127.0.0.1'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password26'
+app.config['MYSQL_HOST'] = 'ccproj.cmvks4aqjsy6.us-east-1.rds.amazonaws.com'
+app.config['MYSQL_USER'] = 'admin'
+app.config['MYSQL_PASSWORD'] = 'ccproj1234'
 app.config['MYSQL_DB'] = 'todo'
 mysql = MySQL(app)
 
@@ -55,3 +55,6 @@ def delete_task(id):
     mysql.connection.commit()
     cur.close()
     return redirect('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)
