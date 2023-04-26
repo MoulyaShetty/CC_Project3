@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verify OTP</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="jumbotron">
+		<center><h1 class="display-4">OTP Verification</h1></center>
+	</div>
+
+	<form class="container" action="/verify_otp" method="POST">
+		<div class="form-group">
+			<label for="inputOTP">Enter OTP</label>
+			<input type="text" class="form-control" id="inputOTP" name="otp" placeholder="Enter OTP">
+		</div>
+		<button type="submit" class="btn btn-primary">Verify OTP</button>
+	</form>
+</body>
+</html>
